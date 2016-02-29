@@ -1,0 +1,167 @@
+# XBMC Media Center language file
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+msgctxt "#32001"
+msgid "OSMC Settings"
+msgstr ""
+
+msgctxt "#32002"
+msgid "OSMC"
+msgstr ""
+
+# msgctxt "#32003"
+# msgid "A new device has been detected."
+# msgstr ""
+
+# msgctxt "#32004"
+# msgid "Would you like to add it as a library source?"
+# msgstr ""
+
+# msgctxt "#32005"
+# msgid "Please wait a few seconds and try again."
+# msgstr ""
+
+# msgctxt "#32006"
+# msgid "If this error persists, try disabling then re-enabling the OSMC Settings Service."
+# msgstr ""
+
+msgctxt "#32007"
+msgid "OSMC Setting Service failed to launch"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Welcome"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Timezone"
+msgstr ""
+
+msgctxt "#32010"
+msgid "License"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Networking"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Finish"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Continue"
+msgstr ""
+
+msgctxt "#32014"
+msgid "OSMC could not automatically connect to the Internet."
+msgstr ""
+
+msgctxt "#32015"
+msgid "I'd like to set up networking manually"
+msgstr ""
+
+msgctxt "#32016"
+msgid "I'll set up networking later"
+msgstr ""
+
+msgctxt "#32017"
+msgid "That's it! You're now ready to enjoy OSMC."
+msgstr ""
+
+msgctxt "#32018"
+msgid "If you need any help we have a wealth of resources"
+msgstr ""
+
+msgctxt "#32019"
+msgid "to help you get the best of OSMC."
+msgstr ""
+
+msgctxt "#32020"
+msgid "We hope you enjoy using OSMC"
+msgstr ""
+
+msgctxt "#32021"
+msgid "~ Team OSMC ~"
+msgstr ""
+
+msgctxt "#32022"
+msgid "I'd like to stay updated with OSMC news by email"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Warranty"
+msgstr ""
+
+msgctxt "#32024"
+msgid "Please Wait..."
+msgstr ""
+
+msgctxt "#32025"
+msgid "Configuring Network Connection"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Check for Updates?"
+msgstr ""
+
+msgctxt "#32027"
+msgid "As you've installed OSMC via NOOBS,"
+msgstr ""
+
+msgctxt "#32028"
+msgid "we recommend you ensure you're on the latest version."
+msgstr ""
+
+msgctxt "#32029"
+msgid "Would you like to check for updates now?"
+msgstr ""
+
+msgctxt "#32030"
+msgid "Thanks for trying OSMC."
+msgstr ""
+
+msgctxt "#32031"
+msgid "We recommend you check for updates now to ensure you're on the latest version."
+msgstr ""
+
+msgctxt "#32032"
+msgid "What would you like to do?"
+msgstr ""
+
+msgctxt "#32033"
+msgid "at osmc.tv/help and a bustling community "
+msgstr ""
+
+msgctxt "#32034"
+msgid "just as much as we enjoy developing it!"
+msgstr ""
+
+msgctxt "#32035"
+msgid "Give your device a name"
+msgstr ""
+
+msgctxt "#32036"
+msgid "SSH Service is Enabled"
+msgstr ""
+
+msgctxt "#32037"
+msgid "SSH Service is Disabled"
+msgstr ""
+
+msgctxt "#32038"
+msgid "Update Now"
+msgstr ""
