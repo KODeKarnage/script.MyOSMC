@@ -13,7 +13,7 @@ except:
 def extract_fonts_from_file(filename):
     """ Returns a list of Font namedtuples extracted from the Font.xml provided"""
 
-    Font = namedtuple('Font', 'name size filename linespacing')
+    Font = namedtuple('Font', 'name size filename aspect linespacing')
     
     tree = ET.parse(filename)
     root = tree.getroot()
@@ -38,11 +38,15 @@ def extract_fonts_from_file(filename):
             except:
                 continue        
             try:
+                aspect = font.find('aspect').text
+            except:
+                aspect = 1.0                        
+            try:
                 linespacing = font.find('linespacing').text
             except:
-                linespacing = 0    
+                linespacing = 1.0    
 
-            retrieved_fonts.append(Font(name=name, size=size, filename=filename, linespacing=linespacing))                
+            retrieved_fonts.append(Font(name=name, size=size, filename=filename, aspect=aspect, linespacing=linespacing))                
 
     return retrieved_fonts
 
@@ -75,7 +79,8 @@ def match_addon_fonts_with_skin_fonts(addon_font_file, skin_font_file=None, thre
     # loop through the list of fonts that we need replacements for
     # find the skin font closest to the size of our font
     # if tied, try and match filename
-    # if still tied, match the line spacing
+    # again if tied (or none found), try and match the aspect
+    # if still tied (or none found), match the line spacing
     # finally choose the first font in the list
 
     if skin_font_file is None:
@@ -130,18 +135,30 @@ def match_addon_fonts_with_skin_fonts(addon_font_file, skin_font_file=None, thre
 
             # if there are no name matches, use the full, closest font list
             if not name_matches:
-                name_matches == closest_fonts
+                name_matches = closest_fonts
 
-            # if there are multiple name matches (or none), then reduce the list to those matching the linespacing
-            line_matches = [x for x in name_matches if x.linespacing == a_font.linespacing]
+            # if there are multiple name matches (or none), then reduce the list to those matching the aspect
+            aspect_matches = [x for x in name_matches if x.aspect == a_font.aspect]
+
+            # if there is one that matches the aspect, use that
+            if len(aspect_matches) == 1:
+                font_matches[a_font.name] = line_matches[0].name
+                continue
+
+            # if there are no aspect matches, use the full, closest font list
+            if not aspect_matches:
+                aspect_matches = name_matches
+
+            # if there are multiple aspect matches (or none), then reduce the list to those matching the linespacing
+            line_matches = [x for x in aspect_matches if x.linespacing == a_font.linespacing]
 
             # if there is one that matches the linespacing, use that
             if len(line_matches) == 1:
-                font_matches[ofontname] = line_matches[0].name
+                font_matches[a_font.name] = line_matches[0].name
                 continue
 
             else: # otherwise, just use the first font in the closest list
-                font_matches[ofontname] = closest_fonts[0].name
+                font_matches[a_font.name] = aspect_matches[0].name
                 continue
 
     return font_matches
@@ -249,3 +266,19 @@ def replace_fonts_in_xml_with_skin_equivalents( original_xml,
     # write the new file
     with open(new_name, 'w') as f:
         f.writelines(new_lines)
+
+
+    return font_name_matching_dict
+
+
+
+if __name__ == "__main__":
+
+    replace_fonts_in_xml_with_skin_equivalents(     "C:\\t\\addon_skin.xml", 
+                                                    font_name_matching_dict=None, 
+                                                    addon_font_file="C:\\t\\Font.xml", 
+                                                    skin_font_file="C:\\t\\skin_Font.xml", 
+                                                    threshold=9999, 
+                                                    new_name=None)
+
+
