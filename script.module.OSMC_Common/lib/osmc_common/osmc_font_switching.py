@@ -142,7 +142,7 @@ def match_addon_fonts_with_skin_fonts(addon_font_file, skin_font_file=None, thre
 
             # if there is one that matches the aspect, use that
             if len(aspect_matches) == 1:
-                font_matches[a_font.name] = line_matches[0].name
+                font_matches[a_font.name] = aspect_matches[0].name
                 continue
 
             # if there are no aspect matches, use the full, closest font list
@@ -274,11 +274,12 @@ def replace_fonts_in_xml_with_skin_equivalents( original_xml,
 
 if __name__ == "__main__":
 
-    replace_fonts_in_xml_with_skin_equivalents(     "C:\\t\\addon_skin.xml", 
-                                                    font_name_matching_dict=None, 
-                                                    addon_font_file="C:\\t\\Font.xml", 
-                                                    skin_font_file="C:\\t\\skin_Font.xml", 
-                                                    threshold=9999, 
-                                                    new_name=None)
+    print replace_fonts_in_xml_with_skin_equivalents(   original_xml            = "C:\\t\\addon_skin.xml", 
+                                                        font_name_matching_dict = None, 
+                                                        addon_font_file         = "C:\\t\\Font.xml", 
+                                                        skin_font_file          = "C:\\t\\skin_Font.xml", 
+                                                        threshold               = 9999, 
+                                                        new_name                = None
+                                                )
 
 
